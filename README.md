@@ -46,6 +46,23 @@ https://api.meteogate.eu/eu-eumetnet-climate-observations
 - `advanced_demo.ipynb`: extended demonstration. It inspects collection metadata, plots the ECA&D station network, requests a De Bilt time series, and demonstrates polygon queries using the Rhine basin. The request helper also prints the URL for every API call.  
   [Open `advanced_demo.ipynb` on MyBinder](https://mybinder.org/v2/gh/ECA-D/ecad_rodeo_demo/main?urlpath=%2Fdoc%2Ftree%2Fadvanced_demo.ipynb)
 - `requirements.txt`: Python packages installed by Binder.
+- `runtime.txt`: Python version used by MyBinder.
+- `.github/workflows/notebooks.yml`: GitHub Actions workflow that executes the notebooks automatically.
+
+## Keeping the Tutorial Working
+
+The Python package versions in `requirements.txt` are pinned. This helps MyBinder and GitHub Actions build the same environment each time, instead of silently picking newer package versions that may behave differently.
+
+The repository also includes a GitHub Actions workflow that runs the notebooks:
+
+- on pull requests
+- on pushes to `main`
+- every Monday at 06:00 UTC
+- manually, through the GitHub Actions tab
+
+The workflow installs the packages from `requirements.txt` and executes both notebooks with `jupyter nbconvert`. This is similar to how users experience the notebooks on MyBinder: if a dependency changes, an API response changes, or a notebook cell fails, the workflow should fail and make the problem visible.
+
+Because these notebooks call a live API, a failing scheduled run can mean either the notebook broke or the remote service was temporarily unavailable. If a scheduled run fails, first re-run the workflow once from GitHub Actions before changing the notebooks.
 
 ## Run on MyBinder
 
