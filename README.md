@@ -41,10 +41,12 @@ https://api.meteogate.eu/eu-eumetnet-climate-observations
 
 ## Contents
 
-- `basic_demo.ipynb`: beginner-friendly walkthrough. It configures the API endpoint, retrieves station metadata with `/locations`, requests one station with `/locations/{id}`, queries observations with `/cube`, summarizes the returned station data, and downloads station data as NetCDF with `f=netCDF4`. Each request prints the API URL before processing the response.
-- `advanced_demo.ipynb`: extended demonstration. It inspects collection metadata, plots the ECA&D station network, requests a De Bilt time series, and demonstrates polygon queries using the Rhine basin. The request helper also prints the URL for every API call.
+- `basic_demo.ipynb`: beginner-friendly walkthrough. It configures the API endpoint, retrieves station metadata with `/locations`, requests one station with `/locations/{id}`, queries observations with `/cube`, summarizes the returned station data, and downloads station data as NetCDF with `f=netCDF4`. Each request prints the API URL before processing the response.  
+  [Open `basic_demo.ipynb` on MyBinder](https://mybinder.org/v2/gh/ECA-D/ecad_rodeo_demo/main?urlpath=%2Fdoc%2Ftree%2Fbasic_demo.ipynb)
+- `advanced_demo.ipynb`: extended demonstration. It inspects collection metadata, plots the ECA&D station network, requests a De Bilt time series, and demonstrates polygon queries using the Rhine basin. The request helper also prints the URL for every API call.  
+  [Open `advanced_demo.ipynb` on MyBinder](https://mybinder.org/v2/gh/ECA-D/ecad_rodeo_demo/main?urlpath=%2Fdoc%2Ftree%2Fadvanced_demo.ipynb)
 - `requirements.txt`: Python packages installed by Binder.
 
 ## Run on MyBinder
 
-Click the MyBinder badge above to launch the tutorial in a browser. MyBinder will build the environment from this repository, install the packages listed in `requirements.txt`, and open `basic_demo.ipynb`.
+Click the MyBinder badge above to launch the basic tutorial in a browser, or use one of the notebook-specific links in the contents section. MyBinder will build the environment from this repository, install the packages listed in `requirements.txt`, and open the selected notebook.
