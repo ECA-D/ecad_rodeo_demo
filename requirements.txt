@@ -1,0 +1,8 @@
+numpy
+pandas
+requests
+matplotlib
+cartopy
+shapely
+ipywidgets
+xarray
