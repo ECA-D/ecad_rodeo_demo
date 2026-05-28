@@ -1,0 +1,49 @@
+name: Test notebooks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  execute-notebooks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    env:
+      MPLBACKEND: Agg
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Execute basic notebook
+        run: |
+          jupyter nbconvert \
+            --to notebook \
+            --execute basic_demo.ipynb \
+            --output /tmp/basic_demo.executed.ipynb \
+            --ExecutePreprocessor.timeout=900
+
+      - name: Execute advanced notebook
+        run: |
+          jupyter nbconvert \
+            --to notebook \
+            --execute advanced_demo.ipynb \
+            --output /tmp/advanced_demo.executed.ipynb \
+            --ExecutePreprocessor.timeout=1200
