@@ -6,3 +6,6 @@ cartopy
 shapely
 ipywidgets
 xarray
+xarray
+h5netcdf
+h5py
