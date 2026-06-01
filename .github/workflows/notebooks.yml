@@ -6,6 +6,7 @@ on:
     branches:
       - main
   schedule:
+    # “At 06:00 on Monday.” 
     - cron: "0 6 * * 1"
   workflow_dispatch:
 
