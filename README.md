@@ -1,6 +1,7 @@
 # ECA&D RODEO MyBinder tutorial
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ECA-D/ecad_rodeo_demo/main?urlpath=%2Fdoc%2Ftree%2Fbasic_demo.ipynb)
+[![Test notebooks](https://github.com/ECA-D/ecad_rodeo_demo/actions/workflows/notebooks.yml/badge.svg)](https://github.com/ECA-D/ecad_rodeo_demo/actions/workflows/notebooks.yml)
 
 This repository is a simple setup for a MyBinder tutorial that demonstrates how to use the ECA&D non-blended collection through the RODEO OGC Environmental Data Retrieval (EDR) API.
 
