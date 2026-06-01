@@ -29,7 +29,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python --upgrade pip
           python -r requirements.txt
 
       - name: Execute basic notebook
