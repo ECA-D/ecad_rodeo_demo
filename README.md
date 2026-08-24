@@ -30,7 +30,7 @@ The MyBinder session is temporary. Any files created during the session, such as
 
 The examples use the ECA&D non-blended collection exposed through the EUMETNET Climate Observations API:
 
-https://api.meteogate.eu/eu-eumetnet-climate-observations
+https://api.meteogate.eu/eu-eumetnet-climate-observations/v1
 
 ECA&D contains European meteorological observations. The non-blended collection contains station series as provided by the data participants. More information about ECA&D is available at:
 
@@ -38,7 +38,7 @@ https://www.ecad.eu
 
 Technical API documentation, examples, and settings are available from the API documentation page:
 
-https://api.meteogate.eu/eu-eumetnet-climate-observations
+https://api.meteogate.eu/eu-eumetnet-climate-observations/v1/docs
 
 ## Contents
 
