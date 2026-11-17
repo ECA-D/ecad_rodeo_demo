@@ -3,7 +3,7 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ECA-D/ecad_rodeo_demo/main?urlpath=%2Fdoc%2Ftree%2Fbasic_demo.ipynb)
 [![Test notebooks](https://github.com/ECA-D/ecad_rodeo_demo/actions/workflows/notebooks.yml/badge.svg)](https://github.com/ECA-D/ecad_rodeo_demo/actions/workflows/notebooks.yml)
 
-This repository is a simple setup for a MyBinder tutorial that demonstrates how to use the ECA&D non-blended collection through the RODEO OGC Environmental Data Retrieval (EDR) API.
+This repository is a simple setup for a MyBinder tutorial that demonstrates how to use the ECA&D non-blended and blended collections through the RODEO OGC Environmental Data Retrieval (EDR) API.
 
 The notebooks show how to inspect the collection, find stations, request station time series, use bounding-box and polygon queries, and download data in NetCDF format. The environment is intentionally small so it can be launched quickly on MyBinder.
 
@@ -44,8 +44,10 @@ https://api.meteogate.eu/eu-eumetnet-climate-observations/v1/docs
 
 - `basic_demo.ipynb`: beginner-friendly walkthrough. It configures the API endpoint, retrieves station metadata with `/locations`, requests one station with `/locations/{id}`, queries observations with `/cube`, summarizes the returned station data, and downloads station data as NetCDF with `f=netCDF4`. Each request prints the API URL before processing the response.  
   [Open `basic_demo.ipynb` on MyBinder](https://mybinder.org/v2/gh/ECA-D/ecad_rodeo_demo/main?urlpath=%2Fdoc%2Ftree%2Fbasic_demo.ipynb)
-- `advanced_demo.ipynb`: extended demonstration. It inspects collection metadata, plots the ECA&D station network, requests a De Bilt time series, and demonstrates polygon queries using the Rhine basin. The request helper also prints the URL for every API call.  
+- `advanced_demo.ipynb`: extended demonstration. It inspects collection metadata, plots the ECA&D station network, requests a De Bilt time series, demonstrates polygon queries using the Rhine basin, compares the number of stations in that polygon between the non-blended and blended collections, and shows the provider lineage of stations (`verbose=true`). The request helper also prints the URL for every API call.  
   [Open `advanced_demo.ipynb` on MyBinder](https://mybinder.org/v2/gh/ECA-D/ecad_rodeo_demo/main?urlpath=%2Fdoc%2Ftree%2Fadvanced_demo.ipynb)
+- `blending_demo.ipynb`: explains how the blended collection is built up over time. It uses De Kooy, the example from the ECA&D help text, and Lauwersoog, which is extended with synoptic messages. It shows the provider lineage over time, and how to filter `/locations` with `bbox` or `country_code` when using `verbose=true`.  
+  [Open `blending_demo.ipynb` on MyBinder](https://mybinder.org/v2/gh/ECA-D/ecad_rodeo_demo/main?urlpath=%2Fdoc%2Ftree%2Fblending_demo.ipynb)
 - `requirements.txt`: Python packages installed by Binder.
 - `runtime.txt`: Python version used by MyBinder.
 - `.github/workflows/notebooks.yml`: GitHub Actions workflow that executes the notebooks automatically.
@@ -61,7 +63,7 @@ The repository also includes a GitHub Actions workflow that runs the notebooks:
 - every Monday at 06:00 UTC
 - manually, through the GitHub Actions tab
 
-The workflow installs the packages from `requirements.txt` and executes both notebooks with `jupyter nbconvert`. This is similar to how users experience the notebooks on MyBinder: if a dependency changes, an API response changes, or a notebook cell fails, the workflow should fail and make the problem visible.
+The workflow installs the packages from `requirements.txt` and executes all three notebooks with `jupyter nbconvert`. This is similar to how users experience the notebooks on MyBinder: if a dependency changes, an API response changes, or a notebook cell fails, the workflow should fail and make the problem visible.
 
 Because these notebooks call a live API, a failing scheduled run can mean either the notebook broke or the remote service was temporarily unavailable. If a scheduled run fails, first re-run the workflow once from GitHub Actions before changing the notebooks.
 
