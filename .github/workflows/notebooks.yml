@@ -48,3 +48,11 @@ jobs:
             --execute advanced_demo.ipynb \
             --output /tmp/advanced_demo.executed.ipynb \
             --ExecutePreprocessor.timeout=1200
+
+      - name: Execute blending notebook
+        run: |
+          jupyter nbconvert \
+            --to notebook \
+            --execute blending_demo.ipynb \
+            --output /tmp/blending_demo.executed.ipynb \
+            --ExecutePreprocessor.timeout=1200
